@@ -9,6 +9,6 @@ pub fn map(record: Value<Json<GhRepo>>) -> Result<Value<Json<JsonValue>>> {
 
     Ok(Value(Json(json!({
         "stars": repo.stargazers_count,
-        "watchers": repo.watchers_count,
+        "forks": repo.forks_count,
     }))))
 }
