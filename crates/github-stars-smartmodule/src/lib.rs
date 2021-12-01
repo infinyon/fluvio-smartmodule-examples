@@ -1,14 +1,15 @@
-use fluvio_smartmodule::{smartmodule, Result};
-use fluvio_smartmodule::extract::*;
-use fluvio_model_github::GhRepo;
+use fluvio_smartmodule::{smartmodule, Record, RecordData, Result};
 use serde_json::{json, Value as JsonValue};
 
 #[smartmodule(map)]
-pub fn map(record: Value<Json<GhRepo>>) -> Result<Value<Json<JsonValue>>> {
-    let repo = record.inner();
+fn shaper(record: &Record) -> Result<(Option<RecordData>, RecordData)> {
+    let repo: JsonValue = serde_json::from_slice(record.value.as_ref())?;
 
-    Ok(Value(Json(json!({
-        "stars": repo.stargazers_count,
-        "forks": repo.forks_count,
-    }))))
+    let shaped = json!({
+        "stars": repo["stargazers_count"],
+        "forks": repo["forks_count"],
+    });
+
+    let output = serde_json::to_vec(&shaped)?;
+    Ok((record.key.clone(), RecordData::from(output)))
 }

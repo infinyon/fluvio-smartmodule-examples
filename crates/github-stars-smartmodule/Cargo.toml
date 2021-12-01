@@ -7,16 +7,5 @@ edition = "2018"
 crate-type = ['cdylib']
 
 [dependencies]
-fluvio-smartmodule = { path = "../../../../infinyon/fluvio/crates/fluvio-smartmodule" }
-fluvio-model-github = { path = "../fluvio-model-github" }
+fluvio-smartmodule = "0.1"
 serde_json = "1"
-
-# We can make this crate have its own workspace.
-# This is needed to enable `profile.relesae.lto` below.
-# If your crate will belong to another workspace,
-# consider enabling lto in that workspace instead
-[workspace]
-members = ["."]
-
-[profile.release]
-lto = true

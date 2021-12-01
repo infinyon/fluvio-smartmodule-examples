@@ -1,4 +1,7 @@
 [workspace]
 members = [
-    "crates/fluvio-model-github",
+    "crates/github-stars-smartmodule",
 ]
+
+[profile.release]
+lto = true
