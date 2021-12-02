@@ -5,9 +5,7 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 
 [1]: https://fluvio.io/docs/smartmodules/overview
 
-## SmartModules
-
-| SmartModule | Blog |
+| SmartModule | Blog/Guide |
 | --- | --- |
 | [Log Level (filter)](./log-level/src/lib.rs)| [Blog: Write a WASM-based filter for application logs](https://www.infinyon.com/blog/2021/06/smartstream-filters/)|
 | [Regex scrubbing (map)](./regex-scrubbing/src/lib.rs) | [Blog: Transforming streaming data in real-time with WebAssembly](https://www.infinyon.com/blog/2021/08/smartstream-map-use-cases/)
@@ -19,11 +17,11 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 | [Incremental Average (aggregate)](./incremental-average/src/lib.rs) | |
 | [Json Array Expansion (array)](./json-array-expansion) | |
 
-# Types of SmartModules
+## Types of SmartModules
 
 Below are quick introductions to the various types of SmartModules and how to use them.
 
-## Filters
+### Filters
 
 Filters are SmartModules that allow you to choose whether each record in the stream
 should be kept (by returning `true`) or discarded (by returning `false`).
@@ -42,7 +40,7 @@ pub fn filter(record: &Record) -> Result<bool> {
 
 This filter will keep only records whose contents contain the letter `a`.
 
-## Maps
+### Maps
 
 Mapping functions use `#[smartmodule(map)]`, and allow you to transform each input
 record to a new output record.
@@ -64,7 +62,7 @@ pub fn map(record: &Record) -> Result<(Option<RecordData>, RecordData)> {
 
 This SmartModule will read each input Record as an integer (`i32`), then multiply it by 2.
 
-## Aggregates
+### Aggregates
 
 Aggregate functions are a way to combine the data from many input records.
 Each time the aggregate function is called, it receives an "accumulated" value
@@ -88,7 +86,7 @@ pub fn aggregate(accumulator: RecordData, current: &Record) -> Result<RecordData
 
 This SmartModule reads each record as a string and appends it to the accumulator string.
 
-## ArrayMaps
+### ArrayMaps
 
 ArrayMap functions are used to take one input record and create zero to many output records.
 This can be used to chop up input records that logically represent more than one data point
