@@ -3,6 +3,8 @@ members = [
     "github-stars",
     "json-to-yaml",
     "reddit-pagination",
+    "log-level",
+    "regex-scrubbing",
 ]
 
 [profile.release]
