@@ -35,6 +35,8 @@ jobs:
           target: wasm32-unknown-unknown
 
       - uses: Swatinem/rust-cache@v1
+        with:
+          key: ${{ matrix.os }}-${{ matrix.rust }}-${{ matrix.task.name }}
 
       - name: ${{ matrix.task.name }}
         run: ${{ matrix.task.run }}
