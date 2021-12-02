@@ -429,6 +429,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "json-array-expansion"
+version = "0.0.0"
+dependencies = [
+ "fluvio-smartmodule",
+ "serde_json",
+]
+
+[[package]]
 name = "json-to-yaml"
 version = "0.0.0"
 dependencies = [

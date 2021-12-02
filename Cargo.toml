@@ -8,6 +8,7 @@ members = [
     "grocery-notifications",
     "summing-integers",
     "incremental-average",
+    "json-array-expansion",
 ]
 
 [profile.release]

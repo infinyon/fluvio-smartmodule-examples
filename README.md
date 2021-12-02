@@ -21,3 +21,4 @@ Examples in this repo:
   - [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/)
 - [Json-to-Yaml (map)](./json-to-yaml/src/lib.rs)
 - [Incremental Average (aggregate)](./incremental-average/src/lib.rs)
+- [Json Array Expansion (array)](./json-array-expansion)
