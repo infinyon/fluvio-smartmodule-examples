@@ -9,7 +9,6 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 
 | SmartModule | Blog |
 | --- | --- |
-
 | [Log Level (filter)](./log-level/src/lib.rs)| [Blog: Write a WASM-based filter for application logs](https://www.infinyon.com/blog/2021/06/smartstream-filters/)|
 | [Regex scrubbing (map)](./regex-scrubbing/src/lib.rs) | [Blog: Transforming streaming data in real-time with WebAssembly]|(https://www.infinyon.com/blog/2021/08/smartstream-map-use-cases/)
 | [GitHub Stars (map)](./github-stars/src/lib.rs) | [Guide: How to use SmartModules with the HTTP Smart Connector](https://fluvio.io/connectors/examples/github) |
