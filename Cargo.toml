@@ -6,6 +6,7 @@ members = [
     "log-level",
     "regex-scrubbing",
     "grocery-notifications",
+    "summing-integers",
 ]
 
 [profile.release]
