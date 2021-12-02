@@ -1,6 +1,8 @@
 [workspace]
 members = [
     "github-stars",
+    "json-to-yaml",
+    "reddit-pagination",
 ]
 
 [profile.release]

@@ -1,5 +1,5 @@
 [package]
-name = "github-stars"
+name = "reddit-pagination"
 version = "0.0.0"
 authors = ["Fluvio Contributors <team@fluvio.io>"]
 edition = "2018"
@@ -9,5 +9,6 @@ publish = false
 crate-type = ['cdylib']
 
 [dependencies]
-fluvio-smartmodule = "0.1"
+fluvio-smartmodule = { version = "0.1.0" }
+serde = { version = "1", features = ["derive"] }
 serde_json = "1"
