@@ -1,0 +1,12 @@
+# connect.yml
+version: v1
+name: github-repo
+type: http
+topic: github-repo
+create_topic: true
+direction: source
+parameters:
+  endpoint: https://api.github.com/repos/infinyon/fluvio
+  headers: "User-Agent:fluvio-http-example"
+  interval: 10
+  map: github-smartmodule
