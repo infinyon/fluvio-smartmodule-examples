@@ -5,7 +5,12 @@ permissions:
 
 on:
   push:
+    branches:
+      - trying
+      - staging
   pull_request:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
@@ -40,3 +45,11 @@ jobs:
 
       - name: ${{ matrix.task.name }}
         run: ${{ matrix.task.run }}
+
+  done:
+    name: Done
+    needs: [main]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Done
+        run: echo "Done!"
