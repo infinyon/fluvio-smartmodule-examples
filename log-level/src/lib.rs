@@ -64,7 +64,7 @@ struct StructuredLog {
 }
 
 #[smartmodule(filter)]
-pub fn filter_log_level(record: &Record) -> Result<bool> {
+fn filter_log_level(record: &Record) -> Result<bool> {
     let log = serde_json::from_slice::<StructuredLog>(record.value.as_ref())?;
     Ok(log.level > LogLevel::Debug)
 }

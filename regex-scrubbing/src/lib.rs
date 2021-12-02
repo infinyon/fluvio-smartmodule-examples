@@ -5,7 +5,7 @@ use regex::Regex;
 static SSN_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"\d{3}-\d{2}-\d{4}").unwrap());
 
 #[smartmodule(map)]
-pub fn map(record: &Record) -> Result<(Option<RecordData>, RecordData)> {
+fn map(record: &Record) -> Result<(Option<RecordData>, RecordData)> {
     let key = record.key.clone();
 
     let string = std::str::from_utf8(record.value.as_ref())?;

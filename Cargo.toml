@@ -7,6 +7,7 @@ members = [
     "regex-scrubbing",
     "grocery-notifications",
     "summing-integers",
+    "incremental-average",
 ]
 
 [profile.release]

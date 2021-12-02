@@ -33,7 +33,7 @@ struct RedditPostData {
 }
 
 #[smartmodule(array_map)]
-pub fn array_map(record: &Record) -> Result<Vec<(Option<RecordData>, RecordData)>> {
+fn array_map(record: &Record) -> Result<Vec<(Option<RecordData>, RecordData)>> {
     // Deserialize a RedditListing from JSON
     let listing: RedditListing = serde_json::from_slice(record.value.as_ref())?;
 

@@ -1,7 +1,7 @@
 use fluvio_smartmodule::{smartmodule, Record, RecordData, Result};
 
 #[smartmodule(aggregate)]
-pub fn aggregate(accumulator: RecordData, current: &Record) -> Result<RecordData> {
+fn aggregate(accumulator: RecordData, current: &Record) -> Result<RecordData> {
     // Parse the accumulator and current record as strings
     let accumulator_string = std::str::from_utf8(accumulator.as_ref())?;
     let current_string = std::str::from_utf8(current.value.as_ref())?;

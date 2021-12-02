@@ -20,3 +20,4 @@ Examples in this repo:
 - [Grocery Notifications (filter-map)](./grocery-notifications/src/lib.rs)
   - [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/)
 - [Json-to-Yaml (map)](./json-to-yaml/src/lib.rs)
+- [Incremental Average (aggregate)](./incremental-average/src/lib.rs)
