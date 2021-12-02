@@ -5,7 +5,7 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 
 [1]: https://fluvio.io/docs/smartmodules/overview
 
-## SmartModules (used in blogs)
+## SmartModules
 
 | SmartModule | Blog |
 | --- | --- |
@@ -15,12 +15,9 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 | [Summing Integers (aggregate)](./summing-integers/src/lib.rs) | [Blog: Aggregate streaming data in real-time with WebAssembly](https://www.infinyon.com/blog/2021/08/smartstream-aggregates/) |
 | [Reddit-pagination (array-map)](./reddit-pagination/src/lib.rs) | [Blog: Streaming the Reddit API using Fluvio's WASM ArrayMap](https://www.infinyon.com/blog/2021/10/smartstream-array-map-reddit/) |
 | [Grocery Notifications (filter-map)](./grocery-notifications/src/lib.rs) | [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/) |
-
-## SmartModules (not used in blogs)
-
-- [Json-to-Yaml (map)](./json-to-yaml/src/lib.rs)
-- [Incremental Average (aggregate)](./incremental-average/src/lib.rs)
-- [Json Array Expansion (array)](./json-array-expansion)
+| [Json-to-Yaml (map)](./json-to-yaml/src/lib.rs) | |
+| [Incremental Average (aggregate)](./incremental-average/src/lib.rs) | |
+| [Json Array Expansion (array)](./json-array-expansion) | |
 
 # Types of SmartModules
 
