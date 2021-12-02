@@ -11,11 +11,14 @@ Examples in this repo:
   - [Blog: Transforming streaming data in real-time with WebAssembly][3]
 - [GitHub Stars (map)](./github-stars/src/lib.rs)
   - [Guide: How to use SmartModules with the HTTP Smart Connector][4]
-- [Json-to-Yaml (map)](./json-to-yaml/src/lib.rs)
 - [Reddit-pagination (array-map)](./reddit-pagination/src/lib.rs)
   - [Blog: Streaming the Reddit API using Fluvio's WASM ArrayMap](https://www.infinyon.com/blog/2021/10/smartstream-array-map-reddit/)
+- [Grocery Notifications (filter-map)](./grocery-notifications/src/lib.rs)
+  - [Blog: Using Fluvio FilterMap to apply focus to real-time data][5]
+- [Json-to-Yaml (map)](./json-to-yaml/src/lib.rs)
 
 [1]: https://fluvio.io/docs/smartmodules/overview
 [2]: https://www.infinyon.com/blog/2021/06/smartstream-filters/
 [3]: https://www.infinyon.com/blog/2021/08/smartstream-map-use-cases/
 [4]: https://fluvio.io/connectors/examples/github
+[5]: https://www.infinyon.com/blog/2021/11/filter-map/

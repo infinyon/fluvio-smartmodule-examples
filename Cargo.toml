@@ -5,6 +5,7 @@ members = [
     "reddit-pagination",
     "log-level",
     "regex-scrubbing",
+    "grocery-notifications",
 ]
 
 [profile.release]
