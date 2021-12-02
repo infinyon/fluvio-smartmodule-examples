@@ -1,6 +1,6 @@
-use regex::Regex;
+use fluvio_smartmodule::{smartmodule, Record, RecordData, Result};
 use once_cell::sync::Lazy;
-use fluvio_smartmodule::{smartmodule, Result, Record, RecordData};
+use regex::Regex;
 
 static SSN_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"\d{3}-\d{2}-\d{4}").unwrap());
 
