@@ -339,7 +339,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "github-stars-smartmodule"
+name = "github-stars"
 version = "0.1.0"
 dependencies = [
  "fluvio-smartmodule",
