@@ -15,7 +15,7 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 | [Grocery Notifications](./grocery-notifications/src/lib.rs) | filter-map | [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/) |
 | [Json-to-Yaml](./json-to-yaml/src/lib.rs) | [map](https://www.fluvio.io/docs/smartstreams/map/) | |
 | [Incremental Average](./incremental-average/src/lib.rs) | [aggregate](https://www.fluvio.io/docs/smartstreams/aggregate/) | |
-| [Json Array Expansion](./json-array-expansion) | array | |
+| [Json Array Expansion](./json-array-expansion) | [array-map](https://www.fluvio.io/docs/smartstreams/array-map/) | |
 
 ## Types of SmartModules
 
