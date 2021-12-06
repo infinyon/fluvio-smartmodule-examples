@@ -15,9 +15,8 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 | [Json-to-Yaml](./json-to-yaml/src/lib.rs) | [map](https://www.fluvio.io/docs/smartstreams/map/) | |
 | [Reddit-pagination](./reddit-pagination/src/lib.rs) | [array-map](https://www.fluvio.io/docs/smartstreams/array-map/) | [Blog: Streaming the Reddit API using Fluvio's WASM ArrayMap](https://www.infinyon.com/blog/2021/10/smartstream-array-map-reddit/) |
 | [Json Array Expansion](./json-array-expansion/src/lib.rs) | [array-map](https://www.fluvio.io/docs/smartstreams/array-map/) | |
-| [Grocery Notifications](./grocery-notifications/src/lib.rs) | filter-map | [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/) |
+| [Grocery Notifications](./grocery-notifications/src/lib.rs) | [filter-map](https://www.fluvio.io/docs/smartstreams/filter-map/) | [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/) |
 
-[filter-map]: https://www.fluvio.io/docs/smartstreams/filter-map/
 
 ## Types of SmartModules
 
