@@ -17,6 +17,8 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 | [Json Array Expansion](./json-array-expansion/src/lib.rs) | [array-map](https://www.fluvio.io/docs/smartstreams/array-map/) | |
 | [Grocery Notifications](./grocery-notifications/src/lib.rs) | filter-map | [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/) |
 
+[filter-map]: https://www.fluvio.io/docs/smartstreams/filter-map/
+
 ## Types of SmartModules
 
 Below are quick introductions to the various types of SmartModules and how to use them.
