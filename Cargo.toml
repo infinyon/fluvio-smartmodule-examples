@@ -6,6 +6,7 @@ members = [
     "log-level",
     "regex-scrubbing",
     "grocery-notifications",
+    "grocery-notifications-simple",
     "summing-integers",
     "incremental-average",
     "json-array-expansion",
