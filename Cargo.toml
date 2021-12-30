@@ -9,6 +9,7 @@ members = [
     "summing-integers",
     "incremental-average",
     "json-array-expansion",
+    "smartmodule-with-params",
 ]
 
 [profile.release]
