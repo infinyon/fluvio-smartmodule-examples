@@ -10,6 +10,7 @@ members = [
     "incremental-average",
     "json-array-expansion",
     "smartmodule-with-params",
+    "smartmodule-xml",
 ]
 
 [profile.release]

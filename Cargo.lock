@@ -93,9 +93,9 @@ checksum = "56899898ce76aaf4a0f24d914c97ea6ed976d42fec6ad33fcbb0a1103e07b2b0"
 
 [[package]]
 name = "eyre"
-version = "0.6.5"
+version = "0.6.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "221239d1d5ea86bf5d6f91c9d6bc3646ffe471b08ff9b0f91c44f115ac969d2b"
+checksum = "4c2b6b5a29c02cdc822728b7d7b8ae1bab3e3b05d44522770ddd49722eeac7eb"
 dependencies = [
  "indenter",
  "once_cell",
@@ -114,6 +114,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "fluvio-compression"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1b2a11336f28be7bee0841da61f619bb410366c53b427cefe02f77e2d5cce7a7"
+dependencies = [
+ "flate2",
+ "lz4_flex",
+ "serde",
+ "snap",
+ "thiserror",
+]
+
+[[package]]
 name = "fluvio-dataplane-protocol"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -125,7 +138,30 @@ dependencies = [
  "crc32c",
  "eyre",
  "fluvio-future",
- "fluvio-protocol",
+ "fluvio-protocol 0.6.2",
+ "flv-util",
+ "futures-util",
+ "once_cell",
+ "semver 1.0.4",
+ "thiserror",
+ "tracing",
+]
+
+[[package]]
+name = "fluvio-dataplane-protocol"
+version = "0.11.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fbea89b47f14d209504903a86788c7013907a69167de56e35caa80e131aef0f"
+dependencies = [
+ "bytes",
+ "cfg-if",
+ "content_inspector",
+ "crc32c",
+ "eyre",
+ "fluvio-compression",
+ "fluvio-future",
+ "fluvio-protocol 0.7.7",
+ "fluvio-types 0.3.7",
  "flv-util",
  "futures-util",
  "once_cell",
@@ -154,7 +190,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "839703012ea287b4f8d62a8f5969b91e334bd1cf1edaad09c4771d4907c20031"
 dependencies = [
  "bytes",
- "fluvio-protocol-derive",
+ "fluvio-protocol-derive 0.3.1",
+ "tracing",
+]
+
+[[package]]
+name = "fluvio-protocol"
+version = "0.7.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c875b24392b835610a0e8c620d11e696014bd106f48a9759bbd080bd1f25d4dd"
+dependencies = [
+ "bytes",
+ "fluvio-protocol-derive 0.4.2",
  "tracing",
 ]
 
@@ -171,15 +218,38 @@ dependencies = [
 ]
 
 [[package]]
+name = "fluvio-protocol-derive"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "37e1b0457e0fd958a6a8f54a508fda58ba169ba667d3fe26367fa50eee4d733b"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+ "tracing",
+]
+
+[[package]]
 name = "fluvio-smartmodule"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a376d2a5acac77600394a06ed686278516644db686234b48b70a52472519163d"
 dependencies = [
  "eyre",
- "fluvio-dataplane-protocol",
- "fluvio-smartmodule-derive",
+ "fluvio-dataplane-protocol 0.8.0",
+ "fluvio-smartmodule-derive 0.1.1",
  "fluvio-spu-schema",
+]
+
+[[package]]
+name = "fluvio-smartmodule"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1ef31561078a389034e04bbeae58cd4cac64282bd7e75c8195422fba4fe68b53"
+dependencies = [
+ "eyre",
+ "fluvio-dataplane-protocol 0.11.1",
+ "fluvio-smartmodule-derive 0.2.0",
 ]
 
 [[package]]
@@ -194,6 +264,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "fluvio-smartmodule-derive"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "de9897e640f4632e58c9ae2b5fde32f7434d34305b4de8619de99d83a5b87ae5"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "fluvio-spu-schema"
 version = "0.8.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -201,9 +282,9 @@ checksum = "0ac6c6c22106ea3d57a9303ed3c8f4c64ca3ae3d8f72312a5c3084c725044aa9"
 dependencies = [
  "bytes",
  "flate2",
- "fluvio-dataplane-protocol",
- "fluvio-protocol",
- "fluvio-types",
+ "fluvio-dataplane-protocol 0.8.0",
+ "fluvio-protocol 0.6.2",
+ "fluvio-types 0.2.6",
  "log",
  "serde",
  "static_assertions",
@@ -219,6 +300,16 @@ dependencies = [
  "thiserror",
  "tracing",
  "tracing-futures",
+]
+
+[[package]]
+name = "fluvio-types"
+version = "0.3.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5417d908546297c524804167a0a8714db6512117d1b0fa52cf434e7bfc1577df"
+dependencies = [
+ "thiserror",
+ "tracing",
 ]
 
 [[package]]
@@ -357,7 +448,7 @@ dependencies = [
 name = "github-stars"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "serde_json",
 ]
 
@@ -365,7 +456,7 @@ dependencies = [
 name = "grocery-notifications"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "serde",
  "serde_json",
 ]
@@ -380,7 +471,7 @@ checksum = "ab5ef0d4909ef3724cc8cce6ccc8572c5c817592e9285f5464f8e86f8bd3726e"
 name = "incremental-average"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "serde",
  "serde_json",
 ]
@@ -432,7 +523,7 @@ dependencies = [
 name = "json-array-expansion"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "serde_json",
 ]
 
@@ -440,7 +531,7 @@ dependencies = [
 name = "json-to-yaml"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "serde",
  "serde_json",
  "serde_yaml",
@@ -486,16 +577,25 @@ dependencies = [
 name = "log-level"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "serde",
  "serde_json",
 ]
 
 [[package]]
-name = "memchr"
-version = "2.4.1"
+name = "lz4_flex"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
+checksum = "74141c8af4bb8136dafb5705826bdd9dce823021db897c1129191804140ddf84"
+dependencies = [
+ "twox-hash",
+]
+
+[[package]]
+name = "memchr"
+version = "2.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
 
 [[package]]
 name = "miniz_oxide"
@@ -599,6 +699,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "quick-xml"
+version = "0.23.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9279fbdacaad3baf559d8cabe0acc3d06e30ea14931af31af79578ac0946decc"
+dependencies = [
+ "memchr",
+ "serde",
+]
+
+[[package]]
 name = "quote"
 version = "1.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -611,7 +721,7 @@ dependencies = [
 name = "reddit-pagination"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "serde",
  "serde_json",
 ]
@@ -640,7 +750,7 @@ dependencies = [
 name = "regex-scrubbing"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
  "once_cell",
  "regex",
 ]
@@ -791,6 +901,31 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1ecab6c735a6bb4139c0caafd0cc3635748bbb3acf4550e8138122099251f309"
 
 [[package]]
+name = "smartmodule-with-params"
+version = "0.0.0"
+dependencies = [
+ "fluvio-smartmodule 0.1.0",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "smartmodule-xml"
+version = "0.1.0"
+dependencies = [
+ "fluvio-smartmodule 0.2.5",
+ "quick-xml",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "snap"
+version = "1.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "45456094d1983e2ee2a18fdfebce3189fa451699d0502cb8e3b49dba5ba41451"
+
+[[package]]
 name = "static_assertions"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -800,7 +935,7 @@ checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 name = "summing-integers"
 version = "0.0.0"
 dependencies = [
- "fluvio-smartmodule",
+ "fluvio-smartmodule 0.1.0",
 ]
 
 [[package]]
@@ -874,6 +1009,16 @@ checksum = "97d095ae15e245a057c8e8451bab9b3ee1e1f68e9ba2b4fbc18d0ac5237835f2"
 dependencies = [
  "pin-project",
  "tracing",
+]
+
+[[package]]
+name = "twox-hash"
+version = "1.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
+dependencies = [
+ "cfg-if",
+ "static_assertions",
 ]
 
 [[package]]
