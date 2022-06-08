@@ -1,5 +1,5 @@
 [package]
-name = "smartmodule-xml"
+name = "smartmodule-json"
 version = "0.1.0"
 authors = ["Fluvio Contributors <team@fluvio.io>"]
 edition = "2021"
@@ -9,6 +9,5 @@ crate-type = ['cdylib']
 
 [dependencies]
 fluvio-smartmodule = { version = "0.2" }
-quick-xml = { version = "0.23.0", features = ["serialize"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
