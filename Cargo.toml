@@ -9,6 +9,7 @@ members = [
     "summing-integers",
     "incremental-average",
     "json-array-expansion",
+    "smartmodule-json",
     "smartmodule-with-params",
     "smartmodule-xml",
 ]

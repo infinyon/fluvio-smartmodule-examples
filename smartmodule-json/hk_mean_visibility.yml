@@ -1,0 +1,12 @@
+apiVersion: v1
+version: 0.2.1
+name: hk-mean-visibility-connector
+type: http
+topic: hk-mean-visibility
+create_topic: true
+direction: source
+parameters:
+  endpoint: https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=LTMV&lang=en&rformat=json
+  method: GET
+  interval: 600
+
