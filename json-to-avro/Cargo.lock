@@ -15,42 +15,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234"
 
 [[package]]
-name = "aho-corasick"
-version = "0.7.18"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f"
-dependencies = [
- "memchr",
-]
-
-[[package]]
 name = "apache-avro"
 version = "0.14.0"
 source = "git+https://github.com/galibey/avro?branch=feature/extend-writer-api#7ed2273083fc7c7c88a815ccad79321f1b67706e"
-dependencies = [
- "byteorder",
- "digest",
- "lazy_static",
- "libflate",
- "log",
- "num-bigint",
- "quad-rand",
- "rand",
- "regex",
- "serde",
- "serde_json",
- "strum",
- "strum_macros",
- "thiserror",
- "typed-builder",
- "uuid",
- "zerocopy",
-]
-
-[[package]]
-name = "apache-avro"
-version = "0.14.0"
-source = "git+https://github.com/apache/avro#a8821d3ddd7e86d9567e48f0bc6387dcc0214c66"
 dependencies = [
  "byteorder",
  "digest",
@@ -87,17 +54,6 @@ name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
-
-[[package]]
-name = "avro-to-str"
-version = "0.0.0"
-dependencies = [
- "apache-avro 0.14.0 (git+https://github.com/apache/avro)",
- "fluvio-smartmodule 0.2.5",
- "lazy_static",
- "serde",
- "serde_json",
-]
 
 [[package]]
 name = "bitflags"
@@ -220,27 +176,6 @@ dependencies = [
 
 [[package]]
 name = "fluvio-dataplane-protocol"
-version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "525dc979551bd6848de9100b06544f40bbcc9993d0501bac2405b8410f20ecdb"
-dependencies = [
- "bytes",
- "cfg-if",
- "content_inspector",
- "crc32c",
- "eyre",
- "fluvio-future",
- "fluvio-protocol 0.6.3",
- "flv-util",
- "futures-util",
- "once_cell",
- "semver",
- "thiserror",
- "tracing",
-]
-
-[[package]]
-name = "fluvio-dataplane-protocol"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1fbea89b47f14d209504903a86788c7013907a69167de56e35caa80e131aef0f"
@@ -252,8 +187,8 @@ dependencies = [
  "eyre",
  "fluvio-compression",
  "fluvio-future",
- "fluvio-protocol 0.7.7",
- "fluvio-types 0.3.7",
+ "fluvio-protocol",
+ "fluvio-types",
  "flv-util",
  "futures-util",
  "once_cell",
@@ -277,35 +212,12 @@ dependencies = [
 
 [[package]]
 name = "fluvio-protocol"
-version = "0.6.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4f044f00e9dd25f19d820b5a6ae2d33024d71bce84b116a37b60e34dd101baf8"
-dependencies = [
- "bytes",
- "fluvio-protocol-derive 0.3.2",
- "tracing",
-]
-
-[[package]]
-name = "fluvio-protocol"
 version = "0.7.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c875b24392b835610a0e8c620d11e696014bd106f48a9759bbd080bd1f25d4dd"
 dependencies = [
  "bytes",
- "fluvio-protocol-derive 0.4.2",
- "tracing",
-]
-
-[[package]]
-name = "fluvio-protocol-derive"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72a044c3c9abee81fd343a1dcc7f3a2886a68482b5ce1800a1d42e7881aa3da7"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
+ "fluvio-protocol-derive",
  "tracing",
 ]
 
@@ -323,36 +235,13 @@ dependencies = [
 
 [[package]]
 name = "fluvio-smartmodule"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a376d2a5acac77600394a06ed686278516644db686234b48b70a52472519163d"
-dependencies = [
- "eyre",
- "fluvio-dataplane-protocol 0.8.0",
- "fluvio-smartmodule-derive 0.1.1",
- "fluvio-spu-schema",
-]
-
-[[package]]
-name = "fluvio-smartmodule"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1ef31561078a389034e04bbeae58cd4cac64282bd7e75c8195422fba4fe68b53"
 dependencies = [
  "eyre",
- "fluvio-dataplane-protocol 0.11.1",
- "fluvio-smartmodule-derive 0.2.0",
-]
-
-[[package]]
-name = "fluvio-smartmodule-derive"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b55e184da8730feca9fbe353bc8f097a6cbfcc62dc27797b91ce9d6b705d372"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
+ "fluvio-dataplane-protocol",
+ "fluvio-smartmodule-derive",
 ]
 
 [[package]]
@@ -364,34 +253,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
-]
-
-[[package]]
-name = "fluvio-spu-schema"
-version = "0.8.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ac6c6c22106ea3d57a9303ed3c8f4c64ca3ae3d8f72312a5c3084c725044aa9"
-dependencies = [
- "bytes",
- "flate2",
- "fluvio-dataplane-protocol 0.8.0",
- "fluvio-protocol 0.6.3",
- "fluvio-types 0.2.7",
- "log",
- "serde",
- "static_assertions",
- "tracing",
-]
-
-[[package]]
-name = "fluvio-types"
-version = "0.2.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ff53bb9bb6f69ea84cbfa76f5c8f8b49b5d9e7e38b29b0f00049d139b51584e9"
-dependencies = [
- "thiserror",
- "tracing",
- "tracing-futures",
 ]
 
 [[package]]
@@ -540,58 +401,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "github-stars"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde_json",
-]
-
-[[package]]
-name = "grocery-notifications"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "hashbrown"
-version = "0.12.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "db0d4cf898abf0081f964436dc980e96670a0f36863e4b83aaacdb65c9d7ccc3"
-
-[[package]]
 name = "heck"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2540771e65fc8cb83cd6e8a237f70c319bd5c29f78ed1084ba5d50eeac86f7f9"
 
 [[package]]
-name = "incremental-average"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "indenter"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ce23b50ad8242c51a442f3ff322d56b02f08852c77e4c0b4d3fd684abc89c683"
-
-[[package]]
-name = "indexmap"
-version = "1.9.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10a35a97730320ffe8e2d410b5d3b69279b98d2c14bdb8b70ea89ecf7888d41e"
-dependencies = [
- "autocfg",
- "hashbrown",
-]
 
 [[package]]
 name = "instant"
@@ -621,32 +440,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "json-array-expansion"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde_json",
-]
-
-[[package]]
 name = "json-to-avro"
 version = "0.0.0"
 dependencies = [
- "apache-avro 0.14.0 (git+https://github.com/galibey/avro?branch=feature/extend-writer-api)",
- "fluvio-smartmodule 0.2.5",
+ "apache-avro",
+ "fluvio-smartmodule",
  "lazy_static",
  "serde",
  "serde_json",
-]
-
-[[package]]
-name = "json-to-yaml"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde",
- "serde_json",
- "serde_yaml",
 ]
 
 [[package]]
@@ -682,12 +483,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "linked-hash-map"
-version = "0.5.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7fb9b38af92608140b86b693604b9ffcc5824240a484d1ecd4795bacb2fe88f3"
-
-[[package]]
 name = "lock_api"
 version = "0.4.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -704,15 +499,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "abb12e687cfb44aa40f41fc3978ef76448f9b6038cad6aef4259d3c095a2382e"
 dependencies = [
  "cfg-if",
-]
-
-[[package]]
-name = "log-level"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde",
- "serde_json",
 ]
 
 [[package]]
@@ -811,26 +597,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pin-project"
-version = "1.0.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "58ad3879ad3baf4e44784bc6a718a8698867bb991f8ce24d1bcbe2cfb4c3a75e"
-dependencies = [
- "pin-project-internal",
-]
-
-[[package]]
-name = "pin-project-internal"
-version = "1.0.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "744b6f092ba29c3650faf274db506afd39944f48420f6c86b17cfe0ee1cb36bb"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
 name = "pin-project-lite"
 version = "0.2.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -862,16 +628,6 @@ name = "quad-rand"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "658fa1faf7a4cc5f057c9ee5ef560f717ad9d8dc66d975267f709624d6e1ab88"
-
-[[package]]
-name = "quick-xml"
-version = "0.23.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9279fbdacaad3baf559d8cabe0acc3d06e30ea14931af31af79578ac0946decc"
-dependencies = [
- "memchr",
- "serde",
-]
 
 [[package]]
 name = "quote"
@@ -913,15 +669,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "reddit-pagination"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde",
- "serde_json",
-]
-
-[[package]]
 name = "redox_syscall"
 version = "0.2.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -936,18 +683,7 @@ version = "1.5.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d83f127d94bdbcda4c8cc2e50f6f84f4b611f69c902699ca385a39c3a75f9ff1"
 dependencies = [
- "aho-corasick",
- "memchr",
  "regex-syntax",
-]
-
-[[package]]
-name = "regex-scrubbing"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "once_cell",
- "regex",
 ]
 
 [[package]]
@@ -1033,18 +769,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde_yaml"
-version = "0.8.24"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "707d15895415db6628332b737c838b88c598522e4dc70647e59b72312924aebc"
-dependencies = [
- "indexmap",
- "ryu",
- "serde",
- "yaml-rust",
-]
-
-[[package]]
 name = "slab"
 version = "0.4.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1055,34 +779,6 @@ name = "smallvec"
 version = "1.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f2dd574626839106c320a323308629dcb1acfc96e32a8cba364ddc61ac23ee83"
-
-[[package]]
-name = "smartmodule-json"
-version = "0.1.0"
-dependencies = [
- "fluvio-smartmodule 0.2.5",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "smartmodule-with-params"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "smartmodule-xml"
-version = "0.1.0"
-dependencies = [
- "fluvio-smartmodule 0.2.5",
- "quick-xml",
- "serde",
- "serde_json",
-]
 
 [[package]]
 name = "snap"
@@ -1113,13 +809,6 @@ dependencies = [
  "quote",
  "rustversion",
  "syn",
-]
-
-[[package]]
-name = "summing-integers"
-version = "0.0.0"
-dependencies = [
- "fluvio-smartmodule 0.1.0",
 ]
 
 [[package]]
@@ -1195,16 +884,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7b7358be39f2f274f322d2aaed611acc57f382e8eb1e5b48cb9ae30933495ce7"
 dependencies = [
  "once_cell",
-]
-
-[[package]]
-name = "tracing-futures"
-version = "0.2.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "97d095ae15e245a057c8e8451bab9b3ee1e1f68e9ba2b4fbc18d0ac5237835f2"
-dependencies = [
- "pin-project",
- "tracing",
 ]
 
 [[package]]
@@ -1381,15 +1060,6 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
-]
-
-[[package]]
-name = "yaml-rust"
-version = "0.4.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85"
-dependencies = [
- "linked-hash-map",
 ]
 
 [[package]]

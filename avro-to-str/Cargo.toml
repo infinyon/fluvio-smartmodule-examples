@@ -1,0 +1,17 @@
+[package]
+name = "avro-to-str"
+version = "0.0.0"
+edition = "2021"
+authors = ["Fluvio Contributors <team@fluvio.io>"]
+publish = false
+
+[lib]
+crate-type = ['cdylib']
+
+[dependencies]
+fluvio-smartmodule = "0.2.5" 
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+apache-avro = { version = "0.14", features=[], default-features = false, git = "https://github.com/apache/avro"  }
+lazy_static = "1.4.0"
+
