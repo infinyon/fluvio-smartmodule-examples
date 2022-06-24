@@ -5,17 +5,19 @@ To learn more about SmartModules, visit [the docs on fluvio.io][1].
 
 [1]: https://fluvio.io/docs/smartmodules/overview
 
-| Example | SmartModule | Blog/Guide |
-| --- | --- | --- |
-| [Summing Integers](./summing-integers/src/lib.rs) | [aggregate](https://www.fluvio.io/docs/smartmodules/aggregate/) | [Blog: Aggregate streaming data in real-time with WebAssembly](https://www.infinyon.com/blog/2021/08/smartstream-aggregates/) |
-| [Incremental Average](./incremental-average/src/lib.rs) | [aggregate](https://www.fluvio.io/docs/smartmodules/aggregate/) | |
-| [Log Level](./log-level/src/lib.rs)| [filter](https://www.fluvio.io/docs/smartmodules/filter/) | [Blog: Write a WASM-based filter for application logs](https://www.infinyon.com/blog/2021/06/smartstream-filters/)|
-| [Regex scrubbing](./regex-scrubbing/src/lib.rs) | [map](https://www.fluvio.io/docs/smartmodules/map/) | [Blog: Transforming streaming data in real-time with WebAssembly](https://www.infinyon.com/blog/2021/08/smartstream-map-use-cases/)
-| [GitHub Stars](./github-stars/src/lib.rs) | [map](https://www.fluvio.io/docs/smartmodules/map/) | [Guide: How to use SmartModules with the HTTP Smart Connector](https://fluvio.io/connectors/examples/github) |
-| [Json-to-Yaml](./json-to-yaml/src/lib.rs) | [map](https://www.fluvio.io/docs/smartmodules/map/) | |
-| [Reddit-pagination](./reddit-pagination/src/lib.rs) | [array-map](https://www.fluvio.io/docs/smartmodules/array-map/) | [Blog: Streaming the Reddit API using Fluvio's WASM ArrayMap](https://www.infinyon.com/blog/2021/10/smartstream-array-map-reddit/) |
-| [Json Array Expansion](./json-array-expansion/src/lib.rs) | [array-map](https://www.fluvio.io/docs/smartmodules/array-map/) | |
+| Example                                                     | SmartModule | Blog/Guide |
+|-------------------------------------------------------------| --- | --- |
+| [Summing Integers](./summing-integers/src/lib.rs)           | [aggregate](https://www.fluvio.io/docs/smartmodules/aggregate/) | [Blog: Aggregate streaming data in real-time with WebAssembly](https://www.infinyon.com/blog/2021/08/smartstream-aggregates/) |
+| [Incremental Average](./incremental-average/src/lib.rs)     | [aggregate](https://www.fluvio.io/docs/smartmodules/aggregate/) | |
+| [Log Level](./log-level/src/lib.rs)                         | [filter](https://www.fluvio.io/docs/smartmodules/filter/) | [Blog: Write a WASM-based filter for application logs](https://www.infinyon.com/blog/2021/06/smartstream-filters/)|
+| [Regex scrubbing](./regex-scrubbing/src/lib.rs)             | [map](https://www.fluvio.io/docs/smartmodules/map/) | [Blog: Transforming streaming data in real-time with WebAssembly](https://www.infinyon.com/blog/2021/08/smartstream-map-use-cases/)
+| [GitHub Stars](./github-stars/src/lib.rs)                   | [map](https://www.fluvio.io/docs/smartmodules/map/) | [Guide: How to use SmartModules with the HTTP Smart Connector](https://fluvio.io/connectors/examples/github) |
+| [Json-to-Yaml](./json-to-yaml/src/lib.rs)                   | [map](https://www.fluvio.io/docs/smartmodules/map/) | |
+| [Reddit-pagination](./reddit-pagination/src/lib.rs)         | [array-map](https://www.fluvio.io/docs/smartmodules/array-map/) | [Blog: Streaming the Reddit API using Fluvio's WASM ArrayMap](https://www.infinyon.com/blog/2021/10/smartstream-array-map-reddit/) |
+| [Json Array Expansion](./json-array-expansion/src/lib.rs)   | [array-map](https://www.fluvio.io/docs/smartmodules/array-map/) | |
 | [Grocery Notifications](./grocery-notifications/src/lib.rs) | [filter-map](https://www.fluvio.io/docs/smartmodules/filter-map/) | [Blog: Using Fluvio FilterMap to apply focus to real-time data](https://www.infinyon.com/blog/2021/11/filter-map/) |
+| [Json-to-Avro](./json-to-avro/src/lib.rs)                   | [map](https://www.fluvio.io/docs/smartmodules/map/) | |
+| [Avro-to-String](./avro-to-str/src/lib.rs)                  | [map](https://www.fluvio.io/docs/smartmodules/map/) | |
 
 
 ## Types of SmartModules

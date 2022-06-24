@@ -12,6 +12,8 @@ members = [
     "smartmodule-json",
     "smartmodule-with-params",
     "smartmodule-xml",
+    "json-to-avro",
+    "avro-to-str",
 ]
 
 [profile.release]
